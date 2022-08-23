@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>oop.demo.v1</OriginalElement>
+  <nodes>
+    <node x="252.0" y="-60.0">oop.demo.v1.Person</node>
+    <node x="-10.5" y="276.0">oop.demo.v1.Pen</node>
+    <node x="249.5" y="553.5">oop.demo.v1.BoardMarker</node>
+    <node x="227.5" y="298.0">oop.demo.v1.InkType</node>
+    <node x="249.5" y="153.5">oop.demo.v1.BallPen</node>
+    <node x="526.0" y="364.5">oop.demo.v1.DemoApp</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="oop.demo.v1.BoardMarker" target="oop.demo.v1.Pen" relationship="GENERALIZATION">
+      <point x="-79.5" y="-0.0" />
+      <point x="89.0" y="591.0" />
+      <point x="20.0" y="115.0" />
+    </edge>
+    <edge source="oop.demo.v1.DemoApp" target="oop.demo.v1.Pen" relationship="DEPENDENCY">
+      <point x="0.0" y="26.5" />
+      <point x="609.0" y="651.0" />
+      <point x="69.0" y="651.0" />
+      <point x="0.0" y="115.0" />
+    </edge>
+    <edge source="oop.demo.v1.Pen" target="oop.demo.v1.InkType" relationship="TO_ONE">
+      <point x="79.5" y="-0.0" />
+      <point x="-101.5" y="-0.0" />
+    </edge>
+    <edge source="oop.demo.v1.BoardMarker" target="oop.demo.v1.InkType" relationship="DEPENDENCY">
+      <point x="0.0" y="-37.5" />
+      <point x="0.0" y="93.0" />
+    </edge>
+    <edge source="oop.demo.v1.Person" target="oop.demo.v1.Pen" relationship="TO_ONE">
+      <point x="-77.0" y="-0.0" />
+      <point x="69.0" y="11.0" />
+      <point x="0.0" y="-115.0" />
+    </edge>
+    <edge source="oop.demo.v1.BallPen" target="oop.demo.v1.Pen" relationship="GENERALIZATION">
+      <point x="-79.5" y="-0.0" />
+      <point x="89.0" y="191.0" />
+      <point x="20.0" y="-115.0" />
+    </edge>
+    <edge source="oop.demo.v1.DemoApp" target="oop.demo.v1.BoardMarker" relationship="CREATE">
+      <point x="-20.0" y="26.5" />
+      <point x="589.0" y="591.0" />
+      <point x="79.5" y="-0.0" />
+    </edge>
+    <edge source="oop.demo.v1.DemoApp" target="oop.demo.v1.InkType" relationship="DEPENDENCY">
+      <point x="-83.0" y="-0.0" />
+      <point x="101.5" y="-0.0" />
+    </edge>
+    <edge source="oop.demo.v1.DemoApp" target="oop.demo.v1.Person" relationship="CREATE">
+      <point x="0.0" y="-26.5" />
+      <point x="609.0" y="11.0" />
+      <point x="77.0" y="-0.0" />
+    </edge>
+    <edge source="oop.demo.v1.BallPen" target="oop.demo.v1.InkType" relationship="DEPENDENCY">
+      <point x="0.0" y="37.5" />
+      <point x="0.0" y="-93.0" />
+    </edge>
+    <edge source="oop.demo.v1.Person" target="oop.demo.v1.BallPen" relationship="DEPENDENCY">
+      <point x="0.0" y="71.0" />
+      <point x="0.0" y="-37.5" />
+    </edge>
+  </edges>
+  <settings layout="Orthogonal Groups" zoom="0.6400000000000003" showDependencies="true" x="685.3749999999994" y="587.4062499999998" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
