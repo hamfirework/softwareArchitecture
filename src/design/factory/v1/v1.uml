@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>pattern.creational.factory.v1</OriginalElement>
+  <nodes>
+    <node x="245.0" y="126.0">pattern.creational.factory.v1.VehicleFactory</node>
+    <node x="513.0" y="115.0">pattern.creational.factory.v1.Vtype</node>
+    <node x="77.5" y="126.0">pattern.creational.factory.v1.Car</node>
+    <node x="526.5" y="-14.0">pattern.creational.factory.v1.App</node>
+    <node x="-82.5" y="246.0">pattern.creational.factory.v1.Truck</node>
+    <node x="76.5" y="257.5">pattern.creational.factory.v1.Vehicle</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="pattern.creational.factory.v1.VehicleFactory" target="pattern.creational.factory.v1.Truck" relationship="CREATE">
+      <point x="-5.0" y="-38.0" />
+      <point x="346.0" y="113.0" />
+      <point x="-29.0" y="113.0" />
+      <point x="0.0" y="-38.0" />
+    </edge>
+    <edge source="pattern.creational.factory.v1.App" target="pattern.creational.factory.v1.Vehicle" relationship="DEPENDENCY">
+      <point x="84.5" y="0.0" />
+      <point x="735.0" y="24.0" />
+      <point x="735.0" y="289.0" />
+      <point x="54.5" y="5.0" />
+    </edge>
+    <edge source="pattern.creational.factory.v1.VehicleFactory" target="pattern.creational.factory.v1.Vehicle" relationship="DEPENDENCY">
+      <point x="-0.0" y="38.0" />
+      <point x="351.0" y="279.0" />
+      <point x="54.5" y="-5.0" />
+    </edge>
+    <edge source="pattern.creational.factory.v1.VehicleFactory" target="pattern.creational.factory.v1.Car" relationship="CREATE">
+      <point x="-106.0" y="0.0" />
+      <point x="53.5" y="0.0" />
+    </edge>
+    <edge source="pattern.creational.factory.v1.App" target="pattern.creational.factory.v1.VehicleFactory" relationship="DEPENDENCY">
+      <point x="-84.5" y="0.0" />
+      <point x="356.0" y="24.0" />
+      <point x="5.0" y="-38.0" />
+    </edge>
+    <edge source="pattern.creational.factory.v1.Truck" target="pattern.creational.factory.v1.Vehicle" relationship="REALIZATION">
+      <point x="53.5" y="0.0" />
+      <point x="-54.5" y="0.0" />
+    </edge>
+    <edge source="pattern.creational.factory.v1.App" target="pattern.creational.factory.v1.Vtype" relationship="DEPENDENCY">
+      <point x="0.0" y="38.0" />
+      <point x="0.0" y="-49.0" />
+    </edge>
+    <edge source="pattern.creational.factory.v1.Car" target="pattern.creational.factory.v1.Vehicle" relationship="REALIZATION">
+      <point x="0.0" y="38.0" />
+      <point x="0.0" y="-26.5" />
+    </edge>
+    <edge source="pattern.creational.factory.v1.VehicleFactory" target="pattern.creational.factory.v1.Vtype" relationship="DEPENDENCY">
+      <point x="106.0" y="0.0" />
+      <point x="-98.0" y="0.0" />
+    </edge>
+  </edges>
+  <settings layout="Compact" zoom="1.0" showDependencies="true" x="323.99999999999994" y="164.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
