@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>aa.car.v2</OriginalElement>
+  <nodes>
+    <node x="361.0" y="152.5">aa.car.v2.AutoPilot</node>
+    <node x="222.0" y="152.5">aa.car.v2.HDA</node>
+    <node x="-4.0" y="448.0">aa.car.v2.EngineCar</node>
+    <node x="222.0" y="59.5">aa.car.v2.DriveOption</node>
+    <node x="476.0" y="308.0">aa.car.v2.ElectricCar</node>
+    <node x="249.0" y="297.0">aa.car.v2.CarFactory</node>
+    <node x="236.0" y="448.0">aa.car.v2.Car</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="aa.car.v2.HDA" target="aa.car.v2.DriveOption" relationship="REALIZATION">
+      <point x="-14.5" y="-38.0" />
+      <point x="267.0" y="132.5" />
+      <point x="307.0" y="132.5" />
+      <point x="15.0" y="26.5" />
+    </edge>
+    <edge source="aa.car.v2.EngineCar" target="aa.car.v2.Car" relationship="GENERALIZATION">
+      <point x="96.0" y="0.0" />
+      <point x="-96.0" y="0.0" />
+    </edge>
+    <edge source="aa.car.v2.AutoPilot" target="aa.car.v2.DriveOption" relationship="REALIZATION">
+      <point x="0.0" y="-38.0" />
+      <point x="420.5" y="84.50000000000001" />
+      <point x="20.166666666666742" y="-1.4999999999999858" />
+    </edge>
+    <edge source="aa.car.v2.CarFactory" target="aa.car.v2.HDA" relationship="CREATE">
+      <point x="-50.5" y="-49.0" />
+      <point x="0.0" y="38.0" />
+    </edge>
+    <edge source="aa.car.v2.CarFactory" target="aa.car.v2.Car" relationship="DEPENDENCY">
+      <point x="0.0" y="49.0" />
+      <point x="0.0" y="-38.0" />
+    </edge>
+    <edge source="aa.car.v2.ElectricCar" target="aa.car.v2.Car" relationship="GENERALIZATION">
+      <point x="0.0" y="38.0" />
+      <point x="572.0" y="486.0" />
+      <point x="96.0" y="0.0" />
+    </edge>
+    <edge source="aa.car.v2.CarFactory" target="aa.car.v2.EngineCar" relationship="CREATE">
+      <point x="-83.0" y="0.0" />
+      <point x="92.0" y="346.0" />
+      <point x="0.0" y="-38.0" />
+    </edge>
+    <edge source="aa.car.v2.CarFactory" target="aa.car.v2.ElectricCar" relationship="CREATE">
+      <point x="83.0" y="0.0" />
+      <point x="-96.0" y="0.0" />
+    </edge>
+  </edges>
+  <settings layout="Compact" zoom="1.5" showDependencies="true" x="369.0" y="348.3333333333333" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

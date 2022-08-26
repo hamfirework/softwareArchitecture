@@ -1,4 +1,4 @@
-package aa.car.v1;
+package aa.car.v3;
 
 public abstract class Car {
 
@@ -8,5 +8,5 @@ public abstract class Car {
         this.name = name;
     }
 
-    public abstract void drive();
+    public abstract void drive(Module module);
 }

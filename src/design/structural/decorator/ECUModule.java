@@ -1,6 +1,6 @@
 package design.structural.decorator;
 
-public class ECUModule implements ModuleIF{
+public class  ECUModule implements ModuleIF{
 
     @Override
     public void sendData() {

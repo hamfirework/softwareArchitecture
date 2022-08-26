@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>aa.car.v3</OriginalElement>
+  <nodes>
+    <node x="-85.5" y="154.0">aa.car.v3.HDA</node>
+    <node x="-42.0" y="-26.0">aa.car.v3.ElectricCar</node>
+    <node x="478.0" y="-26.0">aa.car.v3.EngineCar</node>
+    <node x="223.5" y="314.0">aa.car.v3.DrivePilotAdapter</node>
+    <node x="218.0" y="-37.5">aa.car.v3.Car</node>
+    <node x="231.0" y="143.0">aa.car.v3.CarFactory</node>
+    <node x="252.5" y="454.0">aa.car.v3.DrivePilot</node>
+    <node x="-85.5" y="454.0">aa.car.v3.AutoPilot</node>
+    <node x="-96.0" y="325.5">aa.car.v3.DriveOption</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="aa.car.v3.AutoPilot" target="aa.car.v3.DriveOption" relationship="REALIZATION">
+      <point x="0.0" y="-38.0" />
+      <point x="0.0" y="26.5" />
+    </edge>
+    <edge source="aa.car.v3.DrivePilotAdapter" target="aa.car.v3.DriveOption" relationship="REALIZATION">
+      <point x="-90.5" y="0.0" />
+      <point x="70.0" y="0.0" />
+    </edge>
+    <edge source="aa.car.v3.CarFactory" target="aa.car.v3.DrivePilotAdapter" relationship="CREATE">
+      <point x="0.0" y="49.0" />
+      <point x="0.0" y="-38.0" />
+    </edge>
+    <edge source="aa.car.v3.CarFactory" target="aa.car.v3.Car" relationship="DEPENDENCY">
+      <point x="0.0" y="-49.0" />
+      <point x="0.0" y="49.5" />
+    </edge>
+    <edge source="aa.car.v3.ElectricCar" target="aa.car.v3.Car" relationship="GENERALIZATION">
+      <point x="96.0" y="0.0" />
+      <point x="-96.0" y="0.0" />
+    </edge>
+    <edge source="aa.car.v3.DrivePilotAdapter" target="aa.car.v3.DrivePilot" relationship="GENERALIZATION">
+      <point x="0.0" y="38.0" />
+      <point x="0.0" y="-38.0" />
+    </edge>
+    <edge source="aa.car.v3.HDA" target="aa.car.v3.DriveOption" relationship="REALIZATION">
+      <point x="0.0" y="38.0" />
+      <point x="0.0" y="-26.5" />
+    </edge>
+    <edge source="aa.car.v3.EngineCar" target="aa.car.v3.Car" relationship="GENERALIZATION">
+      <point x="-96.0" y="0.0" />
+      <point x="96.0" y="0.0" />
+    </edge>
+  </edges>
+  <settings layout="Orthogonal Groups" zoom="0.8598639455782314" showDependencies="true" x="297.0" y="255.99999999999994" />
+  <SelectedNodes>
+    <node>aa.car.v3.Car</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
