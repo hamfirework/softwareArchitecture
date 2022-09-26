@@ -7,6 +7,9 @@ import java.util.ArrayList;
 
 public class Wheel {
 
+
+    public static final int FIRST_CHANCE_MONEY = 1000;
+    public static final int CHANCE_MONEY = 2000;
     public static ArrayList<StringBuilder> strs = new ArrayList<>();
     public static int[][] map = new int[5][50];
     public static String userdata;
@@ -50,19 +53,7 @@ public class Wheel {
             char nextUserChar = userdata.charAt(i);
 
             //1. 2000 달러 찬스를 얻었는지 검사
-            for (int y = 0; y < strs.size(); y++) {
-                if (chance[y] != -1) {
-                    for (int x = 0; x < strs.get(chance[y]).length(); x++) {
-                        if (map[chance[y]][x] == 0 && strs.get(chance[y]).charAt(x) == nextUserChar) {
-                            //획득 성공시 2000달러를 얻는다.
-                            sum += 2000;
-                            break;
-                        }
-                    }
-                    chance[y] = -1;
-                }
-            }
-
+            sum += checkChanceAndGetChanceMoney(chance, nextUserChar);
 
 
             int passCnt = 0;
@@ -79,7 +70,6 @@ public class Wheel {
 
                         //Let's First 점수인지 확인한다.
                         if (ffirst[y] == 0 && x == 0) {
-                            sum += 1000;
                             ffirst[y] = 1;
                             chance[y] = y;
                         } else if (ffirst[y] == 0 && x != 0) {
@@ -98,6 +88,12 @@ public class Wheel {
                 }
             }
 
+            for(int y=0; y<ffirst.length; y++){
+                if(ffirst[y] == 1 && chance[y] == y){
+                    sum += FIRST_CHANCE_MONEY;
+                    ffirst[y] = 2;
+                }
+            }
 
             if (passCnt != 0) {
                 conCnt++;
@@ -109,5 +105,25 @@ public class Wheel {
         }
 
         System.out.println("$" + sum);
+    }
+
+    private static int checkChanceAndGetChanceMoney(int[] chance, char nextUserChar) {
+        boolean chanceSuccess = false;
+        for (int y = 0; y < strs.size(); y++) {
+            if (chance[y] != -1) {
+                chanceSuccess = checkChanceSuccess(nextUserChar, chance[y]);
+                chance[y] = -1;
+            }
+        }
+        return chanceSuccess ? CHANCE_MONEY : 0;
+    }
+
+    private static boolean checkChanceSuccess(char nextUserChar, int y) {
+        for (int x = 0; x < strs.get(y).length(); x++) {
+            if (map[y][x] == 0 && strs.get(y).charAt(x) == nextUserChar) {
+                return true;
+            }
+        }
+        return false;
     }
 }
