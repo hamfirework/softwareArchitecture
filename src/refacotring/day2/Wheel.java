@@ -63,7 +63,7 @@ public class Wheel {
             }
 
 
-            int flag = 0;
+
             int passCnt = 0;
 
             //2중 for 돌면서 정답 문자열을 하나씩 검사해서
@@ -90,7 +90,6 @@ public class Wheel {
 
                         //해당 문자를 _로 바꿔버린다.
                         strs.get(y).setCharAt(x, '_');
-                        flag = 1;
 
                         //동일한 문자 개수를 Counting한다.
                         passCnt++;
@@ -99,7 +98,7 @@ public class Wheel {
             }
 
 
-            if (flag == 1) {
+            if (passCnt != 0) {
                 conCnt++;
                 sum += (conCnt * 100) * passCnt;
             } else {
