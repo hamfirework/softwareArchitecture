@@ -27,11 +27,21 @@ public class Wheel {
         br.close();
 
 
-        int conCnt = 0;
-        int[] ffirst = { 0, 0, 0, 0, 0 };
+        calcPrizeMoney();
+    }
 
+    private static void calcPrizeMoney() {
+
+        // 연속 점수 체크
+        int conCnt = 0;
+        // 상금
         int sum = 0;
+
+        // 첫번째 글짜를 맞췄는가.
+        int[] ffirst = { 0, 0, 0, 0, 0 };
         int[] chance = { -1, -1, -1, -1, -1 };
+
+
 
 
         //하나씩 처리
