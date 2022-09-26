@@ -47,12 +47,13 @@ public class Wheel {
         //하나씩 처리
         //26글자 for 돌면서 퀴즈 참석자가 하나씩 시도를 하는 것
         for (int i = 0; i < 26; i++) {
+            char nextUserChar = userdata.charAt(i);
 
             //1. 2000 달러 찬스를 얻었는지 검사
             for (int y = 0; y < strs.size(); y++) {
                 if (chance[y] != -1) {
                     for (int x = 0; x < strs.get(chance[y]).length(); x++) {
-                        if (map[chance[y]][x] == 0 && strs.get(chance[y]).charAt(x) == userdata.charAt(i)) {
+                        if (map[chance[y]][x] == 0 && strs.get(chance[y]).charAt(x) == nextUserChar) {
                             //획득 성공시 2000달러를 얻는다.
                             sum += 2000;
                             break;
@@ -74,7 +75,7 @@ public class Wheel {
 
                     //만약 퀴즈참석자가 요청한 문자가,
                     //정답문자열과 동일하다면
-                    if (strs.get(y).charAt(x) == userdata.charAt(i)) {
+                    if (strs.get(y).charAt(x) == nextUserChar) {
 
                         //Let's First 점수인지 확인한다.
                         if (ffirst[y] == 0 && x == 0) {
