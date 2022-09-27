@@ -17,12 +17,11 @@ public class Wheel {
     public static final int SECOND_CHANCE_MONEY = 2000;
     public static final int SECOND_INIT_VALUE = -1;
     public static final int BASIC_MONEY = 100;
+    public static final char CONFIRMED_STR = '_';
 
 
     public static ArrayList<StringBuilder> strs = new ArrayList<>();
-    public static int[][] map = new int[5][50];
     public static String userdata;
-    public static int n;
 
     public static void main(String[] args) throws IOException {
 
@@ -51,6 +50,7 @@ public class Wheel {
 
         for (int i = 0; i < 26; i++) {
             char nextUserChar = userdata.charAt(i);
+
             sum += checkSecondChanceAndGetChanceMoney(chance, nextUserChar);
             int passCnt = getPassCntFromAnswers(ffirst, chance, nextUserChar);
             sum += checkFirstChanceAndGetChanceMoney(ffirst, chance);
@@ -79,24 +79,26 @@ public class Wheel {
         boolean chanceSuccess = false;
         for (int y = 0; y < strs.size(); y++) {
             if (chance[y] != SECOND_INIT_VALUE) {
-                chanceSuccess = checkSecondChanceSuccess(userChar, chance[y]);
+                StringBuilder answer = strs.get(y);
+                chanceSuccess = checkSecondChanceSuccess(answer, userChar);
                 chance[y] = SECOND_INIT_VALUE;
+                break;
             }
         }
         return chanceSuccess ? SECOND_CHANCE_MONEY : 0;
     }
 
-    private static boolean checkSecondChanceSuccess(char userChar, int answerNum) {
-        for (int x = 0; x < strs.get(answerNum).length(); x++) {
-            if (isSecondChanceSuccess(userChar, answerNum, x)) {
+    private static boolean checkSecondChanceSuccess(StringBuilder answer, char userChar) {
+        for (int x = 0; x < answer.length(); x++) {
+            if (isSecondChanceSuccess(answer.charAt(x), userChar)) {
                 return true;
             }
         }
         return false;
     }
 
-    private static boolean isSecondChanceSuccess(char userChar, int answerNum, int charNum) {
-        return map[answerNum][charNum] == NOT_CONFIRMED && strs.get(answerNum).charAt(charNum) == userChar;
+    private static boolean isSecondChanceSuccess(char answerChar, char userChar) {
+        return answerChar != CONFIRMED_STR && answerChar == userChar;
     }
 
     private static int getPassCntFromAnswers(int[] ffirst, int[] chance, char userChar) {
@@ -111,8 +113,7 @@ public class Wheel {
     private static int getPassCntFromAnswer(int[] ffirst, int[] chance, char userChar, int answerNum, StringBuilder answer) {
         int passCnt = 0;
         for (int x = 0; x < answer.length(); x++) {
-            if (map[answerNum][x] == CONFIRMED) continue;
-
+            if (strs.get(answerNum).charAt(x)  == CONFIRMED_STR) continue;
             if (isEqualAnswerChar(answer.charAt(x), userChar)) {
                 markingAnswer(ffirst, chance, answer, answerNum, x);
                 passCnt++;
@@ -124,15 +125,10 @@ public class Wheel {
         return answerChar == userChar;
     }
     private static void markingAnswer(int[] ffirst, int[] chance, StringBuilder answer, int answerNum, int charNum) {
-        //Let's First 점수인지 확인한다.
-        if (ffirst[answerNum] == NOT_CONFIRMED && charNum == 0) {
-            ffirst[answerNum] = CONFIRMED;
-            chance[answerNum] = answerNum;
-        } else if (ffirst[answerNum] == NOT_CONFIRMED && charNum != 0) {
-            ffirst[answerNum] = CONFIRMED;
-        }
-        map[answerNum][charNum] = CONFIRMED;
-        answer.setCharAt(charNum, '_');
+        answer.setCharAt(charNum, CONFIRMED_STR);
+        if(ffirst[answerNum] == CONFIRMED) return;
+        ffirst[answerNum] = CONFIRMED;
+        if (charNum == 0) chance[answerNum] = answerNum;
     }
 
     private static int checkFirstChanceAndGetChanceMoney(int[] ffirst, int[] chance) {
